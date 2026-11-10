@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Test Widget</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 100%; max-width: 320px; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6fa;
+    color: #1d2433;
+    padding: 12px;
+  }
+  .card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  .frog { display: block; width: 96px; height: auto; margin: 0 auto 12px; image-rendering: pixelated; }
+  h1 { font-size: 20px; margin-bottom: 8px; }
+  p { font-size: 14px; line-height: 1.4; margin-bottom: 12px; }
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: #e63946;
+    color: #fff;
+    border: 0;
+    border-radius: 8px;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  #msg { margin-top: 12px; font-size: 13px; color: #2a7a3b; min-height: 16px; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <img class="frog" src="frog.jpg" alt="Frog">
+    <h1>Test Widget</h1>
+    <p>Small landing page for webview testing. Width: 320px.</p>
+    <button class="btn" id="btn">Tap me</button>
+    <div id="msg"></div>
+  </div>
+  <script>
+    var count = 0;
+    document.getElementById('btn').addEventListener('click', function () {
+      count++;
+      document.getElementById('msg').textContent = 'Tapped ' + count + ' time(s)';
+    });
+  </script>
+</body>
+</html>
